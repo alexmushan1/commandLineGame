@@ -37,7 +37,7 @@ def gameStart(print,input,currPlayer:Player,saveFilePath):
             print("loading menu...")
             break
         else:
-            print("nice!")
+            print("cool!")
             break
 
 
