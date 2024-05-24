@@ -41,7 +41,7 @@ def initGame():
                     abilities = ast.literal_eval(words[1])
                 elif words[0] ==  "OTHERS":
                     others = ast.literal_eval(words[1])
-            currPlayer = Player(name,pClass,items,abilities,others)
+            currPlayer = Player(print,input,name,pClass,items,abilities,others)
         except Exception as e:
             print(f"Player Failed to Load: ERROR: {e}")
             return initNewSave()
@@ -71,18 +71,10 @@ def initNewSave():
         while pClass not in [1,2,3,4,5,6]:
             pClass = int(input("must choose a valid number: "))
         temp =[]
-        currPlayer = Player(playerName,pClass,temp,temp,temp)
-        saveGame(currPlayer)
+        currPlayer = Player(print,input,playerName,pClass,temp,temp,temp)
+        events.saveGame(currPlayer,saveFilePath)
         return currPlayer
 
-def saveGame(currPlayer:Player):
-    outputFile = open(saveFilePath,'w',encoding="utf-8")
-    outputFile.write(f"NAME:{currPlayer._name}\n")
-    outputFile.write(f"CLASS:{currPlayer._class}\n")
-    outputFile.write(f"ITEMS:{currPlayer._ITEMS}\n")
-    outputFile.write(f"ABILITIES:{currPlayer._ABILITIES}\n")
-    outputFile.write(f"OTHERS:{currPlayer.OTHERS}\n")
-    outputFile.close()
 
 def gameloop():
     currPlayer =initGame()
@@ -91,6 +83,7 @@ def gameloop():
     running = True
     while running:
         print("---------------------------------------")
+        print("-------------MAIN MENU-----------------")
         print("COMMANDS: (1)restart, (2)save, (3)back, (4)start, (0)quit")
         condition = input()
         if condition in  ['quit','0']:
@@ -114,12 +107,12 @@ def gameloop():
         elif condition in ['save','2']:
             print(" ")
             print("saving.....")
-            saveGame(currPlayer)
+            events.saveGame(currPlayer,saveFilePath)
             print("game saved")
         elif condition in ['start','4']:
-            events.gameStart(print,input,currPlayer)
+            events.gameStart(print,input,currPlayer,saveFilePath)
     
-    saveGame(currPlayer)
+    events.saveGame(currPlayer,saveFilePath)
 
 
 def on_window_close():
