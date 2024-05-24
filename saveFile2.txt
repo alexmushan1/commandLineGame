@@ -1,0 +1,5 @@
+NAME:a test u know
+CLASS:4
+ITEMS:[]
+ABILITIES:[]
+OTHERS:[]

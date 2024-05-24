@@ -1,0 +1,5 @@
+NAME:alex
+CLASS:1
+ITEMS:[]
+ABILITIES:[]
+OTHERS:[]

@@ -1,0 +1,5 @@
+NAME:tiny buli fay
+CLASS:2
+ITEMS:[]
+ABILITIES:[]
+OTHERS:[]
