@@ -3,7 +3,7 @@ import os.path
 import ast
 import events
 import json
-from playerClass import Player
+from classUtils import Player
 from terminal import TerminalApp
 import tkinter as tk
 
@@ -72,7 +72,7 @@ def initNewSave():
             pClass = int(input("must choose a valid number: "))
         temp =[]
         currPlayer = Player(print,input,playerName,pClass,temp,temp,temp)
-        events.saveGame(currPlayer,saveFilePath)
+        print(events.saveGame(currPlayer,saveFilePath))
         return currPlayer
 
 
@@ -85,6 +85,7 @@ def gameloop():
         print("---------------------------------------")
         print("-------------MAIN MENU-----------------")
         print("COMMANDS: (1)restart, (2)save, (3)back, (4)start, (0)quit")
+        print("---------------------------------------")
         condition = input()
         if condition in  ['quit','0']:
             running = False
@@ -105,14 +106,11 @@ def gameloop():
                 print("going back to menu...")
                 print("-----------------------")
         elif condition in ['save','2']:
-            print(" ")
-            print("saving.....")
-            events.saveGame(currPlayer,saveFilePath)
-            print("game saved")
+            print(events.saveGame(currPlayer,saveFilePath))
         elif condition in ['start','4']:
             events.gameStart(print,input,currPlayer,saveFilePath)
     
-    events.saveGame(currPlayer,saveFilePath)
+    print(events.saveGame(currPlayer,saveFilePath))
 
 
 def on_window_close():

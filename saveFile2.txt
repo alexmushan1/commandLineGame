@@ -1,5 +1,5 @@
-NAME:test1
-CLASS:2
-ITEMS:['knife']
+NAME:test
+CLASS:5
+ITEMS:['bow']
 ABILITIES:[]
 OTHERS:[]

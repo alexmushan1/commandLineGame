@@ -1,14 +1,35 @@
 {
-    "1":"sword",
-    "2":"knife",
-    "3":"staff",
-    "4":"chicken",
-    "5":"bow",
-    "6":"horse",
-    "7":"armor",
-    "8":"hood",
-    "9":"shirt",
-    "10":"Farmer",
-    "11":"Archer",
-    "12":"Nomad"
+    "sword":{
+        "hpmod": "-5",
+        "defence": "5",
+        "range": "3"
+    },
+    "knife":{
+        "hpmod": "-10",
+        "defence": "0",
+        "range": "1"
+    },
+    "staff":{
+        "hpmod": "-3",
+        "defence": "8",
+        "range": "5"
+
+    },
+    "chicken":{
+        "hpmod": "10",
+        "defence": "0",
+        "range": "1"
+    },
+    "bow":{
+        "hpmod": "-10",
+        "defence": "0",
+        "range": "10"
+
+    },
+    "horse":{
+        "hpmod": "-1",
+        "defence": "0",
+        "range": "8"
+    }
+    
 }
